@@ -1,8 +1,8 @@
 [Added Associations]
-text/plain=code-oss.desktop;
+text/plain=org.kde.kate.desktop;
 
 [Default Applications]
-text/plain=code-oss.desktop
+text/plain=org.kde.kate.desktop
 application/zip=org.kde.ark.desktop
 application/x-7z-compressed=org.kde.ark.desktop
 application/x-compressed-tar=org.kde.ark.desktop

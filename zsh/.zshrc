@@ -74,8 +74,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -106,5 +106,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="$HOME/.local/bin:$PATH"
+
+alias cursor-check="$HOME/dev/cursor-update-scripts/check-cursor-version.sh"
+alias cursor-update="sudo $HOME/dev/cursor-update-scripts/update-cursor-fixed.sh"
 
 fastfetch

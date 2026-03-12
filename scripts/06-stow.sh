@@ -65,13 +65,6 @@ if [[ -f "$QT6CT_CONF" ]] && grep -q 'Noto Sans,12' "$QT6CT_CONF"; then
     info "  Normalized Qt6ct font size from 12 to 10."
 fi
 
-# MIME: remove VS Code text/plain associations (no longer installed)
-MIME_LIST="$HOME/.config/mimeapps.list"
-if [[ -f "$MIME_LIST" ]] && grep -q 'code-oss.desktop' "$MIME_LIST"; then
-    sed -i 's/code-oss\.desktop/org.kde.kate.desktop/g' "$MIME_LIST"
-    info "  Patched mimeapps.list: code-oss.desktop -> org.kde.kate.desktop (Kate)."
-fi
-
 # Noctalia & qt6ct: replace hardcoded /home/shepard with actual $HOME
 for cfg in "$HOME/.config/noctalia/settings.json" "$HOME/.config/qt6ct/qt6ct.conf"; do
     if [[ -f "$cfg" ]] && grep -q '/home/shepard' "$cfg"; then

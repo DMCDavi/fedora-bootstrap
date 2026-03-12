@@ -23,7 +23,6 @@ hyprpaper
 ImageMagick
 intel-media-driver
 kde-cli-tools
-kded
 kitty
 konsole
 libnotify
@@ -32,9 +31,7 @@ nano
 NetworkManager
 noctalia-shell
 google-noto-color-emoji-fonts
-npm
 openssh
-p7zip
 papirus-icon-theme
 pipewire
 pipewire-alsa
@@ -52,7 +49,6 @@ stow
 unrar
 unzip
 vim-enhanced
-wget
 wireplumber
 wl-clipboard
 wofi
