@@ -18,6 +18,7 @@ gnome-keyring
 pipewire-gstreamer
 htop
 hyprland
+hyprland-guiutils
 hyprpaper
 ImageMagick
 intel-media-driver
