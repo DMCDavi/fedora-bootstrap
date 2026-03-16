@@ -134,7 +134,7 @@ ForegroundVisited=#feefcd
 
 [General]
 ColorScheme=noctalia
-Name=Breeze Dark
+Name=noctalia
 Name[ar]=نسيم داكن
 Name[az]=Breeze - Tünd
 Name[bg]=Breeze Тъмен
@@ -191,6 +191,7 @@ Name[zh_TW]=Breeze Dark
 shadeSortColumn=true
 
 [KDE]
+ColorScheme=noctalia
 contrast=4
 frameContrast=0.2
 
@@ -210,6 +211,9 @@ Sort hidden files last=false
 Sort reversed=false
 Speedbar Width=140
 View Style=DetailTree
+
+[UiSettings]
+ColorScheme=noctalia
 
 [WM]
 activeBackground=68,69,7

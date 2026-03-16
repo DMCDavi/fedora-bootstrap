@@ -20,6 +20,12 @@ done
 if [[ -n "$FF_PROFILE_DIR" ]]; then
     profile_path="$(find "$FF_PROFILE_DIR" -maxdepth 1 -name "*.default-release" -type d | head -1)"
     if [[ -n "$profile_path" ]]; then
+        if [[ -f "$profile_path/user.js" ]]; then
+            if ! diff -q "$REPO_DIR/firefox/user.js" "$profile_path/user.js" &>/dev/null; then
+                cp "$profile_path/user.js" "$profile_path/user.js.bak"
+                info "  Backed up existing user.js -> user.js.bak"
+            fi
+        fi
         cp "$REPO_DIR/firefox/user.js" "$profile_path/user.js"
         info "  Copied to $profile_path/user.js"
     else

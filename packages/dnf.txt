@@ -18,11 +18,12 @@ gnome-keyring
 pipewire-gstreamer
 htop
 hyprland
+hypridle
+hyprland-guiutils
 hyprpaper
 ImageMagick
 intel-media-driver
 kde-cli-tools
-kded
 kitty
 konsole
 libnotify
@@ -35,7 +36,6 @@ noctalia-shell
 google-noto-color-emoji-fonts
 # npm — managed by nvm instead
 openssh
-p7zip
 papirus-icon-theme
 pipewire
 pipewire-alsa
