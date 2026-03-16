@@ -25,6 +25,7 @@ phases=(
     "05-shell.sh:Shell setup (zsh + Oh My Zsh)"
     "06-stow.sh:Dotfile symlinks (GNU Stow + Fedora patches)"
     "07-post.sh:Post-install tweaks (Firefox, GTK, MIME)"
+    "08-cursor.sh:Cursor IDE (install + keyring config)"
 )
 
 info "Fedora Bootstrap — Hyprland + noctalia-shell"

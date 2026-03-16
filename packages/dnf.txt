@@ -19,6 +19,7 @@ pipewire-gstreamer
 htop
 hyprland
 hypridle
+hyprland-guiutils
 hyprpaper
 ImageMagick
 intel-media-driver
