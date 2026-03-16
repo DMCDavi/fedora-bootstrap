@@ -26,26 +26,4 @@ if [[ -f "$HOME/.zshrc" && ! -L "$HOME/.zshrc" ]]; then
 fi
 stow -v -t "$HOME" zsh
 
-# Fix zsh plugin paths for Fedora (Arch uses /usr/share/zsh/plugins/<name>/)
-ZSHRC="$HOME/.zshrc"
-if [[ -f "$ZSHRC" ]]; then
-    info "Patching zsh plugin paths for Fedora..."
-
-    ARCH_AUTOSUGGESTIONS="/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    FEDORA_AUTOSUGGESTIONS="/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-    ARCH_SYNTAX="/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-    FEDORA_SYNTAX="/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-    if grep -qF "$ARCH_AUTOSUGGESTIONS" "$ZSHRC"; then
-        sed -i "s|$ARCH_AUTOSUGGESTIONS|$FEDORA_AUTOSUGGESTIONS|g" "$ZSHRC"
-        info "  Fixed zsh-autosuggestions path."
-    fi
-
-    if grep -qF "$ARCH_SYNTAX" "$ZSHRC"; then
-        sed -i "s|$ARCH_SYNTAX|$FEDORA_SYNTAX|g" "$ZSHRC"
-        info "  Fixed zsh-syntax-highlighting path."
-    fi
-fi
-
 info "Shell setup complete."

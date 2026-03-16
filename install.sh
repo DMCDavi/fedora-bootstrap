@@ -27,6 +27,7 @@ phases=(
     "07-post.sh:Post-install tweaks (Firefox, GTK, MIME)"
     "08-cursor.sh:Cursor IDE (install + keyring config)"
     "09-ai-cli.sh:AI CLI tools (OpenAI Codex + Claude Code)"
+    "10-windows-vm.sh:Windows 11 VM (QEMU/KVM + virt-manager)"
 )
 
 info "Fedora Bootstrap — Hyprland + noctalia-shell"
