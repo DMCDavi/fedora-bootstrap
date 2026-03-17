@@ -27,6 +27,24 @@ else
     bash "$CURSOR_SCRIPTS_DIR/update-cursor-fixed.sh"
 fi
 
+# --- Fix CLI symlink ---
+# The upstream install script symlinks /usr/local/bin/cursor to the raw
+# Electron binary. This causes every CLI invocation (--list-extensions,
+# --install-extension, etc.) to open a GUI window instead of running
+# headlessly. Point the symlink at the proper CLI wrapper which uses
+# ELECTRON_RUN_AS_NODE=1 for non-GUI commands.
+CLI_WRAPPER="/opt/cursor/usr/share/cursor/bin/cursor"
+BIN_SYMLINK="/usr/local/bin/cursor"
+if [[ -f "$CLI_WRAPPER" ]]; then
+    current_target=$(readlink -f "$BIN_SYMLINK" 2>/dev/null || true)
+    if [[ "$current_target" != "$CLI_WRAPPER" ]]; then
+        sudo ln -sf "$CLI_WRAPPER" "$BIN_SYMLINK"
+        info "  Fixed CLI symlink: $BIN_SYMLINK → $CLI_WRAPPER"
+    else
+        info "  CLI symlink already correct."
+    fi
+fi
+
 # --- Configure keyring for Hyprland ---
 info "Configuring Cursor keyring (gnome-libsecret for Hyprland)..."
 mkdir -p "$HOME/.cursor"
