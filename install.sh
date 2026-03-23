@@ -45,7 +45,7 @@ done
 info "Bootstrap complete!"
 info ""
 info "Manual steps remaining:"
-echo "  - Run 'lpf update spotify-client' to build the Spotify native RPM"
+echo "  - If Spotify did not install, run 'lpf -n update spotify-client'"
 echo "  - Reboot to switch from KDE/Plasma to Hyprland at the SDDM login screen"
 echo "  - Log into Firefox and install extensions"
 echo "  - Add wallpapers to ~/Pictures/Wallpapers/"

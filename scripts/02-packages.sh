@@ -35,10 +35,13 @@ else
 fi
 
 info "Installing Spotify (native RPM via lpf)..."
-if command -v lpf &>/dev/null; then
-    lpf update spotify-client 2>/dev/null || warn "Run 'lpf update spotify-client' manually after reboot."
+if rpm -q spotify-client &>/dev/null; then
+    info "Spotify already installed."
+elif command -v lpf &>/dev/null; then
+    # -n avoids GUI dialogs so bootstrap works in terminal-only sessions.
+    lpf -n update spotify-client 2>/dev/null || warn "Spotify build failed — run 'lpf -n update spotify-client' manually."
 else
-    warn "lpf not yet available — run 'lpf update spotify-client' after reboot to build the Spotify RPM."
+    warn "lpf not available — run 'sudo dnf install -y lpf-spotify-client' and then 'lpf -n update spotify-client'."
 fi
 
 info "Installing Twingate..."
